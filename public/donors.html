@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/partials/header.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+		/>
+		<link rel="stylesheet" href="./css/donors/table.css" />
+		<title>Bank Krwi</title>
+	</head>
+	<body>
+		<div class="main-container">
+			<nav class="navbar-container">
+				<div class="navbar-logo">
+					<i class="fas fa-hand-holding-water"></i>
+				</div>
+				<div class="navbar-links">
+					<span class="navbar-link"><a href="/">Strona główna</a></span>
+					<span class="navbar-link"><a href="/donors">Dawcy</a></span>
+					<span class="navbar-link"><a href="/recipients">Biorcy</a></span>
+					<span class="navbar-link"><a href="/donations">Donacje</a></span>
+					<span class="navbar-link"
+						><a href="/transactions">Transakcje</a></span
+					>
+				</div>
+			</nav>
+			<div class="main-content">
+				<form class="add-donor-form">
+					<input type="text" />
+				</form>
+				<table>
+					<col style="width: 5%" />
+					<col style="width: 10%" />
+					<col style="width: 10%" />
+					<col style="width: 30%" />
+					<col style="width: 15%" />
+					<col style="width: 10%" />
+					<col style="width: 20%" />
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Imię</th>
+							<th>Nazwisko</th>
+							<th>Email</th>
+							<th>Telefon</th>
+							<th>Typ krwi</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+		<script src="js/utils/jsonToTable.js"></script>
+		<script src="js/utils/tableOperations.js"></script>
+		<script src="js/donors/getDonors.js"></script>
+	</body>
+</html>

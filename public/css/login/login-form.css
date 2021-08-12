@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+* {
+	--redFire: rgba(244, 91, 105, 1);
+	--font: 'Roboto Mono', monospace;
+}
+body {
+	background-color: var(--redFire);
+	font-family: var(--font);
+	height: 100vh;
+}
+
+.login-form {
+	background-color: white;
+	padding: 40px 30px 30px 30px;
+	border-radius: 10px;
+	width: 400px;
+}
+
+.login-form > input {
+	font-family: var(--font);
+	display: block;
+	border-radius: 5px;
+	font-size: 16px;
+	background: white;
+	width: 100%;
+	border: 1px solid rgb(201, 200, 200);
+	padding: 10px 10px;
+	margin: 15px -10px;
+}
+.login-form > button {
+	font-family: var(--font);
+	cursor: pointer;
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 80px;
+	border: 0;
+	padding: 10px 0;
+	margin-top: 10px;
+	margin-left: -5px;
+	border-radius: 5px;
+	background-color: var(--redFire);
+}
+
+.login-form > button:hover {
+	background-color: rgb(216, 78, 89);
+}
+.login-form-container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

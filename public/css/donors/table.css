@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+.main-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+table {
+	font-family: 'Roboto Mono', monospace;
+	border-collapse: collapse;
+	width: 70%;
+	margin-top: 40px;
+	border: 1px solid black;
+}
+
+td,
+th {
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	color: white;
+	background-color: black;
+}
+.table-button {
+	width: 40%;
+	cursor: pointer;
+}
+.add-donor-button {
+	width: 70%;
+	height: 100%;
+}
+.add-row-input {
+	width: 70%;
+	border: 1px solid black;
+}
+.add-row-button {
+	width: calc(80% + 16px);
+}
