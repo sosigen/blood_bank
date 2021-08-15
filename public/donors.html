@@ -9,7 +9,10 @@
 			rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
 		/>
-		<link rel="stylesheet" href="./css/donors/table.css" />
+		<link rel="stylesheet" href="./css/partials/table.css" />
+		<link rel="stylesheet" href="./css/donors/donors.css" />
+		<link rel="stylesheet" href="./css/partials/form.css" />
+		<link rel="stylesheet" href="./css/partials/edit-row-popup.css" />
 		<title>Bank Krwi</title>
 	</head>
 	<body>
@@ -30,7 +33,42 @@
 			</nav>
 			<div class="main-content">
 				<form class="add-donor-form">
-					<input type="text" />
+					<input
+						value="imie"
+						placeholder="Imię"
+						name="forename"
+						type="text"
+						required
+					/>
+					<input
+						value="nazwisko"
+						placeholder="Nazwisko"
+						name="surname"
+						type="text"
+						required
+					/>
+					<input
+						value="email@email.com"
+						placeholder="Email"
+						name="email"
+						type="email"
+						required
+					/>
+					<input
+						value="124567123"
+						placeholder="Telefon"
+						name="phone"
+						type="tel"
+						required
+					/>
+					<input
+						value="AB+"
+						placeholder="Typ krwi"
+						name="blood_type"
+						type="text"
+						required
+					/>
+					<button>Dodaj dawcę</button>
 				</form>
 				<table>
 					<col style="width: 5%" />
@@ -55,8 +93,19 @@
 				</table>
 			</div>
 		</div>
+		<div class="edit-row-popup">
+			<form class="add-donor-form">
+				<input placeholder="Imię" name="forename" type="text" required />
+				<input placeholder="Nazwisko" name="surname" type="text" required />
+				<input placeholder="Email" name="email" type="email" required />
+				<input placeholder="Telefon" name="phone" type="tel" required />
+				<input placeholder="Typ krwi" name="blood_type" type="text" required />
+				<button>Dodaj dawcę</button>
+			</form>
+		</div>
 		<script src="js/utils/jsonToTable.js"></script>
 		<script src="js/utils/tableOperations.js"></script>
-		<script src="js/donors/getDonors.js"></script>
+		<script src="js/utils/handlePopup.js"></script>
+		<script src="js/donors/donors.js"></script>
 	</body>
 </html>

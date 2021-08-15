@@ -4,9 +4,9 @@ const router = new express.Router();
 router.use(express.json());
 
 //add new donor
-//`donor_id`, `forename`, `surname`, `address`, `email`, `phone`, `blood_type`, `birth_date`
+//`donor_id`, `forename`, `surname`, `email`, `phone`, `blood_type`
 router.post('/api/donors', (req, res) => {
-	const addRecipientQuery = 'INSERT INTO donors VALUES(null, ?,?,?,?,?,?,?)';
+	const addRecipientQuery = 'INSERT INTO donors VALUES(null, ?,?,?,?,?)';
 	sendQuery(res, addRecipientQuery, Object.values(req.body));
 });
 
