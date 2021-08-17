@@ -23,69 +23,45 @@
 				</div>
 				<div class="navbar-links">
 					<span class="navbar-link"><a href="/">Strona główna</a></span>
-					<span class="navbar-link active"><a href="/donors">Dawcy</a></span>
+					<span class="navbar-link"><a href="/donors">Dawcy</a></span>
 					<span class="navbar-link"><a href="/recipients">Biorcy</a></span>
 					<span class="navbar-link"><a href="/donations">Donacje</a></span>
-					<span class="navbar-link"
+					<span class="navbar-link active"
 						><a href="/transactions">Transakcje</a></span
 					>
 				</div>
 			</nav>
 			<div class="main-content">
-				<form class="add-user-form add-donor">
+				<form class="add-user-form add-transaction">
+					<select name="donation_id" required>
+						<option value="">Wybierz donację</option>
+					</select>
 					<input
-						value="imie"
-						placeholder="Imię"
-						name="forename"
-						type="text"
+						placeholder="Data"
+						name="transaction_date"
+						type="date"
 						required
 					/>
 					<input
-						value="nazwisko"
-						placeholder="Nazwisko"
-						name="surname"
-						type="text"
+						value="1"
+						placeholder="Ilość ( x * 450 ml)"
+						name="quantity"
+						type="number"
 						required
 					/>
-					<input
-						value="email@email.com"
-						placeholder="Email"
-						name="email"
-						type="email"
-						required
-					/>
-					<input
-						value="124567123"
-						placeholder="Telefon"
-						name="phone"
-						type="tel"
-						required
-					/>
-					<input
-						value="AB+"
-						placeholder="Typ krwi"
-						name="blood_type"
-						type="text"
-						required
-					/>
-					<button>Dodaj dawcę</button>
+					<select name="recipient_id" required>
+						<option value="">Wybierz biorcę</option>
+					</select>
+					<button>Dodaj donację</button>
 				</form>
 				<table>
-					<col style="width: 5%" />
-					<col style="width: 10%" />
-					<col style="width: 10%" />
-					<col style="width: 30%" />
-					<col style="width: 15%" />
-					<col style="width: 10%" />
-					<col style="width: 20%" />
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Imię</th>
-							<th>Nazwisko</th>
-							<th>Email</th>
-							<th>Telefon</th>
-							<th>Typ krwi</th>
+							<th>ID donacji</th>
+							<th>Data</th>
+							<th>Ilość</th>
+							<th>ID biorcy</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -94,17 +70,26 @@
 			</div>
 		</div>
 		<div class="edit-row-popup">
-			<form class="edit-user-form edit-donor">
-				<input placeholder="Imię" name="forename" type="text" required />
-				<input placeholder="Nazwisko" name="surname" type="text" required />
-				<input placeholder="Email" name="email" type="email" required />
-				<input placeholder="Telefon" name="phone" type="tel" required />
-				<input placeholder="Typ krwi" name="blood_type" type="text" required />
+			<form class="edit-user-form edit-transaction">
+				<select name="donation_id" required>
+					<option value="">Wybierz donację</option>
+				</select>
+				<input
+					placeholder="Data"
+					name="transaction_date"
+					type="date"
+					required
+				/>
+				<input placeholder="Ilość" name="quantity" type="number" required />
+				<select name="recipient_id">
+					<option>Wybierz biorcę</option>
+				</select>
 				<button>Aktualizuj</button>
 			</form>
 		</div>
 		<script src="js/utils/jsonToTable.js"></script>
 		<script src="js/utils/tableOperations.js"></script>
-		<script src="js/donors/donors.js"></script>
+		<script src="js/utils/populateSelect.js"></script>
+		<script src="js/transactions/transactions.js"></script>
 	</body>
 </html>

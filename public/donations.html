@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/partials/header.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+		/>
+		<link rel="stylesheet" href="./css/partials/table.css" />
+		<link rel="stylesheet" href="./css/donors/donors.css" />
+		<link rel="stylesheet" href="./css/partials/form.css" />
+		<link rel="stylesheet" href="./css/partials/edit-row-popup.css" />
+		<title>Bank Krwi</title>
+	</head>
+	<body>
+		<div class="main-container">
+			<nav class="navbar-container">
+				<div class="navbar-logo">
+					<i class="fas fa-hand-holding-water"></i>
+				</div>
+				<div class="navbar-links">
+					<span class="navbar-link"><a href="/">Strona główna</a></span>
+					<span class="navbar-link"><a href="/donors">Dawcy</a></span>
+					<span class="navbar-link"><a href="/recipients">Biorcy</a></span>
+					<span class="navbar-link active"
+						><a href="/donations">Donacje</a></span
+					>
+					<span class="navbar-link"
+						><a href="/transactions">Transakcje</a></span
+					>
+				</div>
+			</nav>
+			<div class="main-content">
+				<form class="add-user-form add-donation">
+					<input placeholder="Data" name="donation_date" type="date" required />
+					<input
+						value="1"
+						placeholder="Ilość ( x * 450 ml)"
+						name="quantity"
+						type="number"
+						required
+					/>
+					<select name="donor_id" required>
+						<option value="">Wybierz dawcę</option>
+					</select>
+					<button>Dodaj donację</button>
+				</form>
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Data</th>
+							<th>Ilość</th>
+							<th>ID Dawcy</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+		<div class="edit-row-popup">
+			<form class="edit-user-form edit-donation">
+				<input placeholder="Data" name="donation_date" type="date" required />
+				<input placeholder="Ilość" name="quantity" type="number" required />
+				<button>Aktualizuj</button>
+			</form>
+		</div>
+		<script src="js/utils/jsonToTable.js"></script>
+		<script src="js/utils/tableOperations.js"></script>
+		<script src="js/utils/populateSelect.js"></script>
+		<script src="js/donations/donations.js"></script>
+	</body>
+</html>

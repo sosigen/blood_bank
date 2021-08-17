@@ -10,7 +10,7 @@
 			href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
 		/>
 		<link rel="stylesheet" href="./css/partials/table.css" />
-		<link rel="stylesheet" href="./css/donors/donors.css" />
+		<link rel="stylesheet" href="./css/recipients/recipients.css" />
 		<link rel="stylesheet" href="./css/partials/form.css" />
 		<link rel="stylesheet" href="./css/partials/edit-row-popup.css" />
 		<title>Bank Krwi</title>
@@ -23,8 +23,10 @@
 				</div>
 				<div class="navbar-links">
 					<span class="navbar-link"><a href="/">Strona główna</a></span>
-					<span class="navbar-link active"><a href="/donors">Dawcy</a></span>
-					<span class="navbar-link"><a href="/recipients">Biorcy</a></span>
+					<span class="navbar-link"><a href="/donors">Dawcy</a></span>
+					<span class="navbar-link active"
+						><a href="/recipients">Biorcy</a></span
+					>
 					<span class="navbar-link"><a href="/donations">Donacje</a></span>
 					<span class="navbar-link"
 						><a href="/transactions">Transakcje</a></span
@@ -32,7 +34,7 @@
 				</div>
 			</nav>
 			<div class="main-content">
-				<form class="add-user-form add-donor">
+				<form class="add-user-form add-recipient">
 					<input
 						value="imie"
 						placeholder="Imię"
@@ -94,7 +96,7 @@
 			</div>
 		</div>
 		<div class="edit-row-popup">
-			<form class="edit-user-form edit-donor">
+			<form class="edit-user-form edit-recipient">
 				<input placeholder="Imię" name="forename" type="text" required />
 				<input placeholder="Nazwisko" name="surname" type="text" required />
 				<input placeholder="Email" name="email" type="email" required />
@@ -105,6 +107,6 @@
 		</div>
 		<script src="js/utils/jsonToTable.js"></script>
 		<script src="js/utils/tableOperations.js"></script>
-		<script src="js/donors/donors.js"></script>
+		<script src="js/recipients/recipients.js"></script>
 	</body>
 </html>

@@ -7,14 +7,15 @@ router.use(express.json());
 //`donor_id`, `forename`, `surname`, `email`, `phone`, `blood_type`
 router.post('/api/recipients', (req, res) => {
 	const addRecipientQuery = 'INSERT INTO recipients VALUES(null, ?,?,?,?,?)';
-	sendQuery(res, addRecipientQuery, ...Object.values(req.body));
+	sendQuery(res, addRecipientQuery, [...Object.values(req.body)]);
 });
 
 // get every recipient
 router.get('/api/recipients/all', (req, res) => {
 	const getRecipientsQuery = 'SELECT * FROM recipients';
-	sendQuery(res, getRecipientQuery);
+	sendQuery(res, getRecipientsQuery);
 });
+
 // get recipient by ID
 router.get('/api/recipients/:recipientID', (req, res) => {
 	const getRecipientQuery = 'SELECT * FROM recipients WHERE recipient_id=?';

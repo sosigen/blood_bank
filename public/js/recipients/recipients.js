@@ -1,6 +1,6 @@
 async function main() {
-	//get donors data from db
-	const data = await getData('/api/donors/all');
+	//get recipients data from db
+	const data = await getData('/api/recipients/all');
 	const $dataContainer = document.querySelector(
 		'.main-content > table > tbody'
 	);
@@ -12,7 +12,7 @@ async function main() {
 	const editButtonsArray = Array.from(editButtons);
 	editButtonsArray.map((button) =>
 		button.addEventListener('click', (event) => {
-			handleEditWithPopup(event, data, 'donors');
+			handleEditWithPopup(event, data, 'recipients');
 		})
 	);
 
@@ -21,15 +21,15 @@ async function main() {
 	const deleteButtonsArray = Array.from(deleteButtons);
 	deleteButtonsArray.map((button) =>
 		button.addEventListener('click', (event) => {
-			handleDeleteRow(event, 'donors');
+			handleDeleteRow(event, 'recipients');
 		})
 	);
 
-	//bind handleAddForm function to add donor form
+	//bind handleAddForm function to add recipient form
 	document
-		.querySelector('.add-donor')
+		.querySelector('.add-recipient')
 		.addEventListener('submit', (event) =>
-			handleFormSubmit(event, 'POST', '/api/donors')
+			handleFormSubmit(event, 'POST', '/api/recipients')
 		);
 }
 main();

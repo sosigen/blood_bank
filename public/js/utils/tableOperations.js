@@ -1,11 +1,17 @@
-async function handleDeleteRow(event) {
+const idNames = {
+	donors: 'donor_id',
+	recipients: 'recipient_id',
+	transactions: 'transaction_id',
+	donations: 'donation_id',
+};
+async function handleDeleteRow(event, tableName) {
 	//get the ID of row stored in data attribute
 	const rowID = event.currentTarget.getAttribute('data-rowId');
-	console.log(rowID);
 	//send request for deleting
-	const response = await fetch(`/api/donors/${rowID}`, { method: 'DELETE' });
+	const response = await fetch(`/api/${tableName}/${rowID}`, {
+		method: 'DELETE',
+	});
 	//reload to repopulate table
-	console.log(response);
 	if (response.status === 200) location.reload();
 	else alert('wystąpił błąd podczas usuwania');
 }
@@ -40,14 +46,14 @@ async function handleFormSubmit(event, method, url) {
 	//alert user about error
 	else alert('wystąpił błąd');
 }
-function handleEditWithPopup(event, data, idName) {
+function handleEditWithPopup(event, data, tableName) {
 	//get the ID of row stored in data attribute
 	const rowID = Number(event.currentTarget.getAttribute('data-rowId'));
 	//get row by ID from data downloaded earlier
 	const record = data.find((row) => {
-		return row[idName] === rowID;
+		const id = idNames[tableName];
+		return row[id] === rowID;
 	});
-
 	//get form and inputs from it
 	const $popupForm = document.querySelector('.edit-row-popup > form');
 	const $popupForms = $popupForm.querySelectorAll('input');
@@ -73,6 +79,11 @@ function handleEditWithPopup(event, data, idName) {
 	});
 	//submitting form should result in sending update API call
 	$popupForm.addEventListener('submit', (event) => {
-		handleFormSubmit(event, 'PATCH', `/api/donors/${rowID}`);
+		handleFormSubmit(event, 'PATCH', `/api/${tableName}/${rowID}`);
 	});
+}
+async function getData(url) {
+	const response = await fetch(url);
+	let data = await response.json();
+	return data;
 }
