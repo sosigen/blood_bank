@@ -13,7 +13,7 @@ async function handleDeleteRow(event, tableName) {
   });
   //reload to repopulate table
   if (response.status === 200) location.reload();
-  else alert("wystąpił błąd podczas usuwania");
+  else alert("wystąpił błąd");
 }
 
 async function handleFormSubmit(event, method, url) {
