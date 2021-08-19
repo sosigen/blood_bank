@@ -1,112 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/partials/header.css" />
-		<link
-			rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
-		/>
-		<link rel="stylesheet" href="./css/partials/table.css" />
-		<link rel="stylesheet" href="./css/recipients/recipients.css" />
-		<link rel="stylesheet" href="./css/partials/form.css" />
-		<link rel="stylesheet" href="./css/partials/edit-row-popup.css" />
-		<title>Bank Krwi</title>
-	</head>
-	<body>
-		<div class="main-container">
-			<nav class="navbar-container">
-				<div class="navbar-logo">
-					<i class="fas fa-hand-holding-water"></i>
-				</div>
-				<div class="navbar-links">
-					<span class="navbar-link"><a href="/">Strona główna</a></span>
-					<span class="navbar-link"><a href="/donors">Dawcy</a></span>
-					<span class="navbar-link active"
-						><a href="/recipients">Biorcy</a></span
-					>
-					<span class="navbar-link"><a href="/donations">Donacje</a></span>
-					<span class="navbar-link"
-						><a href="/transactions">Transakcje</a></span
-					>
-				</div>
-			</nav>
-			<div class="main-content">
-				<form class="add-user-form add-recipient">
-					<input
-						value="imie"
-						placeholder="Imię"
-						name="forename"
-						type="text"
-						required
-					/>
-					<input
-						value="nazwisko"
-						placeholder="Nazwisko"
-						name="surname"
-						type="text"
-						required
-					/>
-					<input
-						value="email@email.com"
-						placeholder="Email"
-						name="email"
-						type="email"
-						required
-					/>
-					<input
-						value="124567123"
-						placeholder="Telefon"
-						name="phone"
-						type="tel"
-						required
-					/>
-					<input
-						value="AB+"
-						placeholder="Typ krwi"
-						name="blood_type"
-						type="text"
-						required
-					/>
-					<button>Dodaj dawcę</button>
-				</form>
-				<table>
-					<col style="width: 5%" />
-					<col style="width: 10%" />
-					<col style="width: 10%" />
-					<col style="width: 30%" />
-					<col style="width: 15%" />
-					<col style="width: 10%" />
-					<col style="width: 20%" />
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Imię</th>
-							<th>Nazwisko</th>
-							<th>Email</th>
-							<th>Telefon</th>
-							<th>Typ krwi</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-				</table>
-			</div>
-		</div>
-		<div class="edit-row-popup">
-			<form class="edit-user-form edit-recipient">
-				<input placeholder="Imię" name="forename" type="text" required />
-				<input placeholder="Nazwisko" name="surname" type="text" required />
-				<input placeholder="Email" name="email" type="email" required />
-				<input placeholder="Telefon" name="phone" type="tel" required />
-				<input placeholder="Typ krwi" name="blood_type" type="text" required />
-				<button>Aktualizuj</button>
-			</form>
-		</div>
-		<script src="js/utils/jsonToTable.js"></script>
-		<script src="js/utils/tableOperations.js"></script>
-		<script src="js/recipients/recipients.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/partials/header.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+    />
+    <link rel="stylesheet" href="./css/partials/table.css" />
+    <link rel="stylesheet" href="./css/recipients/recipients.css" />
+    <link rel="stylesheet" href="./css/partials/form.css" />
+    <link rel="stylesheet" href="./css/partials/edit-row-popup.css" />
+    <title>Bank Krwi</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="navbar-container">
+        <div class="navbar-logo">
+          <i class="fas fa-hand-holding-water"></i>
+        </div>
+        <div class="navbar-links">
+          <span class="navbar-link"><a href="/">Strona główna</a></span>
+          <span class="navbar-link"><a href="/donors">Dawcy</a></span>
+          <span class="navbar-link active"
+            ><a href="/recipients">Biorcy</a></span
+          >
+          <span class="navbar-link"><a href="/donations">Donacje</a></span>
+          <span class="navbar-link"
+            ><a href="/transactions">Transakcje</a></span
+          >
+        </div>
+      </nav>
+      <div class="main-content">
+        <form class="add-user-form add-recipient">
+          <input
+            value="imie"
+            placeholder="Imię"
+            name="forename"
+            type="text"
+            required
+          />
+          <input
+            value="nazwisko"
+            placeholder="Nazwisko"
+            name="surname"
+            type="text"
+            required
+          />
+          <input
+            value="email@email.com"
+            placeholder="Email"
+            name="email"
+            type="email"
+            required
+          />
+          <input
+            value="124567123"
+            placeholder="Telefon"
+            name="phone"
+            type="tel"
+            required
+          />
+          <select name="blood_type" required>
+            <option value="">Wybierz grupę krwi</option>
+            <option value="A">A</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+
+            <option value="AB">AB</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+
+            <option value="B">B</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+
+            <option value="0">0</option>
+            <option value="0+">0+</option>
+            <option value="0-">0-</option>
+          </select>
+          <button>Dodaj dawcę</button>
+        </form>
+        <table>
+          <col style="width: 5%" />
+          <col style="width: 10%" />
+          <col style="width: 10%" />
+          <col style="width: 30%" />
+          <col style="width: 15%" />
+          <col style="width: 10%" />
+          <col style="width: 20%" />
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Imię</th>
+              <th>Nazwisko</th>
+              <th>Email</th>
+              <th>Telefon</th>
+              <th>Typ krwi</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="edit-row-popup">
+      <form class="edit-user-form edit-recipient">
+        <input placeholder="Imię" name="forename" type="text" required />
+        <input placeholder="Nazwisko" name="surname" type="text" required />
+        <input placeholder="Email" name="email" type="email" required />
+        <input placeholder="Telefon" name="phone" type="tel" required />
+        <input placeholder="Typ krwi" name="blood_type" type="text" required />
+        <button>Aktualizuj</button>
+      </form>
+    </div>
+    <script src="js/utils/jsonToTable.js"></script>
+    <script src="js/utils/tableOperations.js"></script>
+    <script src="js/recipients/recipients.js"></script>
+  </body>
 </html>
