@@ -1,13 +1,22 @@
 async function main() {
   //get donors data from db
   const data = await getData("/api/donors/all");
-  const $dataContainer = document.querySelector(
-    ".main-content > table > tbody"
-  );
+  const $dataContainer = document.querySelector(".main-content");
+  const headerNames = [
+    "ID",
+    "Imię",
+    "Nazwisko",
+    "Email",
+    "Telefon",
+    "Typ krwi",
+  ];
   //create table and append it
-  $dataContainer.innerHTML = jsonToTable(data, {
-    buttons: true,
-  });
+  $dataContainer.append(
+    jsonToTable(data, headerNames, {
+      buttons: true,
+      checks: false,
+    })
+  );
 
   //bind editRow function to edit buttons
   const editButtons = document.querySelectorAll(".edit-button");

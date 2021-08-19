@@ -1,13 +1,22 @@
 async function main() {
   //get recipients data from db
   const data = await getData("/api/recipients/all");
-  const $dataContainer = document.querySelector(
-    ".main-content > table > tbody"
-  );
+  const headerNames = [
+    "ID",
+    "Imię",
+    "Nazwisko",
+    "Email",
+    "Telefon",
+    "Typ krwi",
+  ];
+  const $dataContainer = document.querySelector(".main-content");
   //create table and append it
-  $dataContainer.innerHTML = jsonToTable(data, {
-    buttons: true,
-  });
+  $dataContainer.append(
+    jsonToTable(data, headerNames, {
+      buttons: true,
+      checks: false,
+    })
+  );
 
   //bind editRow function to edit buttons
   const editButtons = document.querySelectorAll(".edit-button");

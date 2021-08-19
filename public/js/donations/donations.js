@@ -1,13 +1,15 @@
 async function main() {
   //get donations data from db
   const data = await getData("/api/donations/all");
-  const $dataContainer = document.querySelector(
-    ".main-content > table > tbody"
-  );
+  const headerNames = ["ID", "Data", "ID Dawcy", "Dostępna"];
+  const $dataContainer = document.querySelector(".main-content");
   //create table and append it
-  $dataContainer.innerHTML = jsonToTable(data, {
-    buttons: true,
-  });
+  $dataContainer.append(
+    jsonToTable(data, headerNames, {
+      buttons: true,
+      checks: true,
+    })
+  );
 
   //populate select input from add form
   const $addSelectInput = document.querySelector(".add-user-form > select");
