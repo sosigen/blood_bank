@@ -4,7 +4,14 @@
 
 Zadaniem tego systemu jest obsługa dawców (donors), biorców (recipients) oraz operacji zachodzacych miedzy nimi: donacji(donations) oraz przekazań krwi biorcom (transactions)
 
-Zakładam, że dawcy oddają zawsze 450 ml krwi, zgodnie z Narodowym Centrum Krwi
+Charakterystyka: 
+- Zakładam, że dawcy oddają zawsze 450 ml krwi, zgodnie z Narodowym Centrum Krwi
+- Raz przekazana krew zostaje oznaczona jako niedostępna (pole available)
+- Przykładowy proces pełnego transferu krwi:
+  - Rejestracja dawcy
+  - Dodanie jego donacji
+  - dodanie transakcji z zarejestrowanym biorcą 
+
 
 # Instalacja
 
