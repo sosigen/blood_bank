@@ -20,6 +20,7 @@ th {
   background-color: black;
 }
 .table-button {
+  margin-left: 5px;
   width: 40%;
   cursor: pointer;
 }

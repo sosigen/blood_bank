@@ -35,6 +35,7 @@
       </nav>
       <div class="main-content">
         <form class="add-user-form user-form add-donation">
+          <h1>Dodaj donację:</h1>
           <input
             class="user-form-input"
             placeholder="Data"
@@ -42,10 +43,10 @@
             type="date"
             required
           />
-          <select class="user-form-input" name="donor_id" required>
+          <select class="user-form-select" name="donor_id" required>
             <option value="">Wybierz dawcę</option>
           </select>
-          <button class="user-form-button">Dodaj donację</button>
+          <button class="user-form-button">Potwierdź</button>
         </form>
       </div>
     </div>
@@ -58,7 +59,7 @@
           type="date"
           required
         />
-        <select class="user-form-input" name="available" required>
+        <select class="user-form-select" name="available" required>
           <option value="1">dostępna</option>
           <option value="0">niedostępna</option>
         </select>

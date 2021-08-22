@@ -13,18 +13,17 @@ body {
 .navbar-container {
   width: 100%;
   background: var(--main-color);
-  padding: 30px 0;
+  padding: 20px 0;
   display: flex;
 }
 .navbar-container > .navbar-logo {
   display: flex;
   justify-content: flex-start;
   margin-left: 70px;
-
   align-items: center;
   width: 30%;
   color: white;
-  font-size: 70px;
+  font-size: 50px;
 }
 .navbar-container > .navbar-links {
   justify-content: space-around;

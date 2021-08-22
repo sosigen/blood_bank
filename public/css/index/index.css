@@ -1,3 +1,25 @@
-.donations-overview > table {
-	width: 30%;
+:root {
+  /* --main-color: #88292f; */
+  --main-color: #af2e37;
+}
+.donations-overview h1 {
+  margin-left: 40px;
+}
+.main-content {
+  display: flex;
+  justify-content: space-around;
+}
+.donations-overview {
+  width: 30%;
+}
+.entry-note {
+  width: 60%;
+}
+.entry-note a {
+  display: inline;
+  color: var(--main-color);
+  text-decoration: none;
+}
+.entry-note li {
+  margin-top: 5px;
 }

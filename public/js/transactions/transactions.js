@@ -15,19 +15,19 @@ async function main() {
 
   //donation add form
   const $donationAddInput = document.querySelector(
-    '.add-user-form user-form > select[name="donation_id"]'
+    '.add-user-form > select[name="donation_id"]'
   );
   await populateSelect("/api/donations/all", $donationAddInput, "donation_id");
 
   //donation edit form
   const $donationEditInput = document.querySelector(
-    '.edit-user-form user-form > select[name="donation_id"]'
+    '.edit-user-form > select[name="donation_id"]'
   );
   await populateSelect("/api/donations/all", $donationEditInput, "donation_id");
 
   //recipient add form
   const $recipientAddInput = document.querySelector(
-    '.add-user-form user-form > select[name="recipient_id"]'
+    '.add-user-form > select[name="recipient_id"]'
   );
   await populateSelect(
     "/api/recipients/all",
@@ -36,7 +36,7 @@ async function main() {
   );
   //recipient edit form
   const $recipientEditInput = document.querySelector(
-    '.edit-user-form user-form > select[name="recipient_id"]'
+    '.edit-user-form > select[name="recipient_id"]'
   );
   await populateSelect(
     "/api/recipients/all",

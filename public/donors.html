@@ -33,35 +33,36 @@
       </nav>
       <div class="main-content">
         <form class="add-user-form user-form add-donor">
+          <h1>Dodaj dawcę:</h1>
           <input
-            value="imie"
+            class="user-form-input"
             placeholder="Imię"
             name="forename"
             type="text"
             required
           />
           <input
-            value="nazwisko"
+            class="user-form-input"
             placeholder="Nazwisko"
             name="surname"
             type="text"
             required
           />
           <input
-            value="email@email.com"
+            class="user-form-input"
             placeholder="Email"
             name="email"
             type="email"
             required
           />
           <input
-            value="124567123"
+            class="user-form-input"
             placeholder="Telefon"
             name="phone"
             type="tel"
             required
           />
-          <select name="blood_type" required>
+          <select class="user-form-select" name="blood_type" required>
             <option value="">Wybierz grupę krwi</option>
             <option value="A">A</option>
             <option value="A+">A+</option>
@@ -79,7 +80,8 @@
             <option value="0+">0+</option>
             <option value="0-">0-</option>
           </select>
-          <button class="user-form-button" s>Dodaj dawcę</button>
+
+          <button class="user-form-button">Potwierdź</button>
         </form>
       </div>
     </div>
