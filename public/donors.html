@@ -32,7 +32,7 @@
         </div>
       </nav>
       <div class="main-content">
-        <form class="add-user-form add-donor">
+        <form class="add-user-form user-form add-donor">
           <input
             value="imie"
             placeholder="Imię"
@@ -79,18 +79,48 @@
             <option value="0+">0+</option>
             <option value="0-">0-</option>
           </select>
-          <button>Dodaj dawcę</button>
+          <button class="user-form-button" s>Dodaj dawcę</button>
         </form>
       </div>
     </div>
     <div class="edit-row-popup">
-      <form class="edit-user-form edit-donor">
-        <input placeholder="Imię" name="forename" type="text" required />
-        <input placeholder="Nazwisko" name="surname" type="text" required />
-        <input placeholder="Email" name="email" type="email" required />
-        <input placeholder="Telefon" name="phone" type="tel" required />
-        <input placeholder="Typ krwi" name="blood_type" type="text" required />
-        <button>Aktualizuj</button>
+      <form class="edit-user-form user-form edit-donor">
+        <input
+          class="user-form-input"
+          placeholder="Imię"
+          name="forename"
+          type="text"
+          required
+        />
+        <input
+          class="user-form-input"
+          placeholder="Nazwisko"
+          name="surname"
+          type="text"
+          required
+        />
+        <input
+          class="user-form-input"
+          placeholder="Email"
+          name="email"
+          type="email"
+          required
+        />
+        <input
+          class="user-form-input"
+          placeholder="Telefon"
+          name="phone"
+          type="tel"
+          required
+        />
+        <input
+          class="user-form-input"
+          placeholder="Typ krwi"
+          name="blood_type"
+          type="text"
+          required
+        />
+        <button class="user-form-button">Aktualizuj</button>
       </form>
     </div>
     <script src="js/utils/jsonToTable.js"></script>

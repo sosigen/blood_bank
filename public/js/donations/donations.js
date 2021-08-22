@@ -12,7 +12,9 @@ async function main() {
   );
 
   //populate select input from add form
-  const $addSelectInput = document.querySelector(".add-user-form > select");
+  const $addSelectInput = document.querySelector(
+    ".add-user-form user-form > select"
+  );
   await populateSelect("/api/donors/all", $addSelectInput, "donor_id");
 
   //bind editRow function to edit buttons

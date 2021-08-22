@@ -1,29 +1,29 @@
-.add-user-form,
-.edit-user-form {
-	margin-top: 40px;
-	width: 40%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+:root {
+  /* --main-color: #88292f; */
+  --main-color: #af2e37;
 }
-.add-user-form > input,
-.edit-user-form > input,
-.add-user-form > select,
-.edit-user-form > select {
-	height: 30px;
-	border: 1px solid black;
-	margin-top: 5px;
-	width: 50%;
+.user-form,
+.user-form {
+  margin-top: 40px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.add-user-form > button,
-.edit-user-form > button {
-	margin: 10px;
-	border: none;
-	background-color: rgba(244, 91, 105, 1);
-	padding: 10px 30px;
-	color: white;
-	cursor: pointer;
-	font-size: 20px;
-	border-radius: 7px;
+.user-form-input {
+  height: 30px;
+  border-bottom: 1px solid black;
+  margin-top: 5px;
+  width: 50%;
+}
+.user-form-button {
+  margin: 10px;
+  border: none;
+  background-color: var(--main-color);
+  padding: 10px 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 7px;
 }

@@ -34,23 +34,35 @@
         </div>
       </nav>
       <div class="main-content">
-        <form class="add-user-form add-donation">
-          <input placeholder="Data" name="donation_date" type="date" required />
-          <select name="donor_id" required>
+        <form class="add-user-form user-form add-donation">
+          <input
+            class="user-form-input"
+            placeholder="Data"
+            name="donation_date"
+            type="date"
+            required
+          />
+          <select class="user-form-input" name="donor_id" required>
             <option value="">Wybierz dawcę</option>
           </select>
-          <button>Dodaj donację</button>
+          <button class="user-form-button">Dodaj donację</button>
         </form>
       </div>
     </div>
     <div class="edit-row-popup">
-      <form class="edit-user-form edit-donation">
-        <input placeholder="Data" name="donation_date" type="date" required />
-        <select name="available" required>
+      <form class="edit-user-form user-form edit-donation">
+        <input
+          class="user-form-input"
+          placeholder="Data"
+          name="donation_date"
+          type="date"
+          required
+        />
+        <select class="user-form-input" name="available" required>
           <option value="1">dostępna</option>
           <option value="0">niedostępna</option>
         </select>
-        <button>Aktualizuj</button>
+        <button class="user-form-button">Aktualizuj</button>
       </form>
     </div>
     <script src="js/utils/jsonToTable.js"></script>
