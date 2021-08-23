@@ -5,7 +5,16 @@ const sendQuery = require("../utils/sendQuery");
 
 //get donations
 router.get("/api/donations/all", (req, res) => {
-  const getDonationsQuery = `SELECT donation_id, DATE_FORMAT(donation_date,'%d/%m/%Y'), donor_id, available FROM donations`;
+  const getDonationsQuery = `
+  SELECT 
+    donation_id, 
+    DATE_FORMAT(donation_date,'%d/%m/%Y') as donation_date, 
+    CONCAT(donors.forename,' ' ,donors.surname) as donor, 
+    donations.donor_id, 
+    available
+  FROM donations
+  INNER JOIN donors on donations.donor_id = donors.donor_id
+  `;
   sendQuery(res, getDonationsQuery);
 });
 

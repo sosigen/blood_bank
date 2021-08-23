@@ -6,6 +6,9 @@ const db = mysql.createPool({
 });
 const sendQuery = (res, query, parameters) => {
   db.query(query, parameters, (err, result) => {
+    if (query.includes("INSERT")) {
+      console.log(parameters);
+    }
     if (err) {
       res.status(500).send("Wystąpił błąd");
       console.log(err);

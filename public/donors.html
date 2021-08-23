@@ -115,13 +115,24 @@
           type="tel"
           required
         />
-        <input
-          class="user-form-input"
-          placeholder="Typ krwi"
-          name="blood_type"
-          type="text"
-          required
-        />
+        <select class="user-form-select" name="blood_type" required>
+          <option value="">Wybierz grupę krwi</option>
+          <option value="A">A</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+
+          <option value="AB">AB</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+
+          <option value="B">B</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+
+          <option value="0">0</option>
+          <option value="0+">0+</option>
+          <option value="0-">0-</option>
+        </select>
         <button class="user-form-button">Aktualizuj</button>
       </form>
     </div>

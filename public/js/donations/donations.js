@@ -1,7 +1,7 @@
 async function main() {
   //get donations data from db
   const data = await getData("/api/donations/all");
-  const headerNames = ["ID", "Data", "ID Dawcy", "Dostępna"];
+  const headerNames = ["ID", "Data", "Dawca", "ID Dawcy", "Dostępna"];
   const $dataContainer = document.querySelector(".main-content");
   //create table and append it
   $dataContainer.append(
@@ -11,9 +11,14 @@ async function main() {
     })
   );
 
-  //populate select input from add form
+  //populate donor select input from add form
   const $addSelectInput = document.querySelector(".add-user-form > select");
-  await populateSelect("/api/donors/all", $addSelectInput, "donor_id");
+  const donorsData = await getData("/api/donors/all");
+  await populateSelect(donorsData, $addSelectInput, [
+    "donor_id",
+    "forename",
+    "surname",
+  ]);
 
   //bind editRow function to edit buttons
   const editButtons = document.querySelectorAll(".edit-button");
