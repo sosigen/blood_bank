@@ -4,7 +4,6 @@ router.use(express.json());
 const sendQuery = require("../utils/sendQuery");
 //add new transaction
 router.post("/api/transactions", (req, res) => {
-  console.log(req.body);
   //`transaction_id`, `transaction_date`, `donation_id`, `recipient_id`
   const addTransactionQuery =
     "INSERT INTO transactions(transaction_date, donation_id, recipient_id) VALUES(?,?,?)";

@@ -40,11 +40,21 @@ async function handleFormSubmit(event, method, url) {
     body: JSON.stringify(data),
   });
   //if everything's ok submit form just to refresh page
+  response;
   if (response.status === 200) {
     event.target.submit();
   }
   //alert user about error
-  else alert("wystąpił błąd");
+  else {
+    switch (response.status) {
+      case 409:
+        alert("Użytkownik o podanym imieniu i nazwisku istnieje");
+        break;
+      default:
+        alert("Wystąpił błąd");
+        break;
+    }
+  }
 }
 function handleEditWithPopup(event, data, tableName) {
   //get the ID of row stored in data attribute

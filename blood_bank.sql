@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 19 Sie 2021, 18:30
+-- Czas generowania: 23 Sie 2021, 21:44
 -- Wersja serwera: 10.4.20-MariaDB
 -- Wersja PHP: 7.3.29
 
@@ -20,14 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `blood_bank`
 --
-
-DELIMITER $$
---
--- Funkcje
---
-CREATE DEFINER=`root`@`localhost` FUNCTION `identificator` (`first_nm` CHAR(20), `last_nm` CHAR(30), `id` INT) RETURNS CHAR(110) CHARSET utf8mb4 RETURN CONCAT(first_nm, ' ', last_nm, '(', id, ')' )$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -60,8 +52,12 @@ CREATE TABLE `donations` (
 INSERT INTO `donations` (`donation_id`, `donation_date`, `donor_id`, `available`) VALUES
 (1, '2021-08-19', 1, 1),
 (2, '2021-08-19', 2, 1),
-(3, '2021-08-22', 3, 1),
-(4, '2021-08-12', 3, 0);
+(3, '2021-08-22', 3, 0),
+(4, '2021-08-12', 3, 0),
+(5, '2021-08-08', 1, 0),
+(6, '2021-08-18', 4, 1),
+(7, '2021-08-19', 4, 0),
+(8, '2021-08-29', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -83,10 +79,11 @@ CREATE TABLE `donors` (
 --
 
 INSERT INTO `donors` (`donor_id`, `forename`, `surname`, `email`, `phone`, `blood_type`) VALUES
-(1, 'Janko', 'Walski', 'jankw@mail.com', '712846607', '0'),
+(1, 'Janko', 'Walski', 'jankw@mail.com', '712846607', '0+'),
 (2, 'Janina', 'Trzmiel', 'trzmiel3@mail.pl', '492746', 'A+'),
 (3, 'Ewelina', 'Wyżynna', 'ewa@mail.com', '897357201', 'AB'),
-(4, 'Sasuke', 'Uchiha', 'sas@uke.pl', '384678137', '0');
+(4, 'Sasuke', 'Uchiha', 'sas@uke.pl', '384678137', '0+'),
+(5, 'Naruto', 'Uzumaki', 'ninetailfox@mail.com', '12490234', 'B-');
 
 -- --------------------------------------------------------
 
@@ -110,7 +107,8 @@ CREATE TABLE `recipients` (
 INSERT INTO `recipients` (`recipient_id`, `forename`, `surname`, `email`, `phone`, `blood_type`) VALUES
 (1, 'Mohammed', 'Avdol', 'mohav32@mail.com', '4857439123', 'B+'),
 (2, 'Franciszek', 'Mirg', 'franek@mail.com', '21239412', 'A+'),
-(3, 'Halina', 'Halińska', 'haha@mail.com', '123857148', '0');
+(3, 'Halina', 'Halińska', 'haha@mail.com', '123857148', '0'),
+(4, 'Grzegorz', 'Dmirski', 'dmirek@mail.org', '132412346', 'AB-');
 
 -- --------------------------------------------------------
 
@@ -130,7 +128,10 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`transaction_id`, `donation_id`, `transaction_date`, `recipient_id`) VALUES
-(1, 4, '2021-08-19', 1);
+(1, 1, '2021-08-20', 1),
+(16, 8, '2021-08-21', 1),
+(17, 7, '2021-08-08', 3),
+(18, 5, '2021-08-15', 3);
 
 --
 -- Wyzwalacze `transactions`
@@ -166,13 +167,15 @@ ALTER TABLE `donations`
 -- Indeksy dla tabeli `donors`
 --
 ALTER TABLE `donors`
-  ADD PRIMARY KEY (`donor_id`);
+  ADD PRIMARY KEY (`donor_id`),
+  ADD UNIQUE KEY `forename` (`forename`,`surname`) USING BTREE;
 
 --
 -- Indeksy dla tabeli `recipients`
 --
 ALTER TABLE `recipients`
-  ADD PRIMARY KEY (`recipient_id`);
+  ADD PRIMARY KEY (`recipient_id`),
+  ADD UNIQUE KEY `forename` (`forename`,`surname`) USING BTREE;
 
 --
 -- Indeksy dla tabeli `transactions`
@@ -190,25 +193,25 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT dla tabeli `donations`
 --
 ALTER TABLE `donations`
-  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `donation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT dla tabeli `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `recipients`
 --
 ALTER TABLE `recipients`
-  MODIFY `recipient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `recipient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Ograniczenia dla zrzutów tabel
